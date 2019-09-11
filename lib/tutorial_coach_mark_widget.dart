@@ -17,6 +17,7 @@ class TutorialCoachMarkWidget extends StatefulWidget {
   final Function() clickSkip;
   final AlignmentGeometry alignSkip;
   final String textSkip;
+  final bool hideSkip;
   const TutorialCoachMarkWidget(
       {Key key,
         this.targets,
@@ -25,6 +26,7 @@ class TutorialCoachMarkWidget extends StatefulWidget {
         this.clickTarget,
         this.alignSkip = Alignment.bottomRight,
         this.textSkip = "SKIP",
+        this.hideSkip = false,
         this.clickSkip,
         this.colorShadow = Colors.black,
         this.opacityShadow = 0.8})
@@ -181,6 +183,10 @@ class _TutorialCoachMarkWidgetState extends State<TutorialCoachMarkWidget> {
   }
 
   _buildSkip() {
+    if (widget.hideSkip) {
+      return Container();
+    }
+    
     return Align(
       alignment: widget.alignSkip,
       child: StreamBuilder(
