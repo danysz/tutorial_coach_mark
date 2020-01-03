@@ -20,6 +20,7 @@ class TutorialCoachMark {
   final Color colorShadow;
   final double opacityShadow;
   final bool disableOverlayTap;
+  final double animationSpeed;
 
   OverlayEntry _overlayEntry;
 
@@ -37,6 +38,7 @@ class TutorialCoachMark {
     this.hideSkip = false,
     this.opacityShadow = 0.8,
     this.disableOverlayTap = false,
+    this.animationSpeed = 1.0,
   }) : assert(targets != null, opacityShadow >= 0 && opacityShadow <= 1);
 
   OverlayEntry _buildOverlay() {
@@ -52,8 +54,10 @@ class TutorialCoachMark {
         hideSkip: hideSkip,
         colorShadow: colorShadow,
         opacityShadow: opacityShadow,
+        animationSpeed: animationSpeed,
         finish: () {
           hide();
+          if (finish != null) finish();
         },
         disableOverlayTap: disableOverlayTap,
       );
