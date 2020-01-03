@@ -64,9 +64,9 @@ class _TutorialCoachMarkWidgetState extends State<TutorialCoachMarkWidget> {
               if (widget.clickTarget != null) {
                 widget.clickTarget(target);
                 if (target.onPressed != null) {
-                 target.onPressed(); 
+                  target.onPressed();
                 }
-              } 
+              }
             },
             focus: (target) {
               currentTarget = target;
