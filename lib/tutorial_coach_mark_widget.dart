@@ -197,6 +197,7 @@ class _TutorialCoachMarkWidgetState extends State<TutorialCoachMarkWidget> {
     if (widget.hideSkip) {
       return Container();
     }
+
     return Align(
       alignment: widget.alignSkip,
       child: SafeArea(
