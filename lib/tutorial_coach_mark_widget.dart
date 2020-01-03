@@ -59,7 +59,12 @@ class _TutorialCoachMarkWidgetState extends State<TutorialCoachMarkWidget> {
             colorShadow: widget.colorShadow,
             opacityShadow: widget.opacityShadow,
             clickTarget: (target) {
-              if (widget.clickTarget != null) widget.clickTarget(target);
+              if (widget.clickTarget != null) {
+                widget.clickTarget(target);
+                if (target.onPressed != null) {
+                 target.onPressed(); 
+                }
+              } 
             },
             focus: (target) {
               currentTarget = target;
